@@ -1,6 +1,6 @@
-public class SparseMatrix {
+public class SparseMatrix_2D {
 
-    public SparseMatrix(int[][] matrix) {
+    public SparseMatrix_2D(int[][] matrix) {
         this.matrix = matrix;
     }
 
