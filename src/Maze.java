@@ -1,5 +1,6 @@
 
 import java.util.Random;
+
 public class Maze {
     private final byte[][] board;
     private char[] direction;
@@ -94,26 +95,13 @@ public class Maze {
         for (byte[] bytes : board) {
             for (byte aByte : bytes) {
                 switch (aByte) {
-                    case 3:
-                        System.out.print("↑");
-                        break;
-                    case 4:
-                        System.out.print('←');
-                        break;
-                    case 5:
-                        System.out.print('↓');
-                        break;
-                    case 6:
-                        System.out.print('→');
-                        break;
-                    case 7:
-                        System.out.print('E');
-                        break;
-                    case 2:
-                        System.out.print('•');
-                        break;
-                    default:
-                        System.out.print(aByte == 1 ? 'X' : '.');
+                    case 3 -> System.out.print("↑");
+                    case 4 -> System.out.print('←');
+                    case 5 -> System.out.print('↓');
+                    case 6 -> System.out.print('→');
+                    case 7 -> System.out.print('E');
+                    case 2 -> System.out.print('•');
+                    default -> System.out.print(aByte == 1 ? 'X' : '.');
                 }
                 System.out.print(" ");
             }
@@ -126,7 +114,7 @@ public class Maze {
             find(0, 0);
             runFind = true;
         }
-        for (int i = counter-1; i >= 0; i--) {
+        for (int i = counter - 1; i >= 0; i--) {
             System.out.print(direction[i] + " ");
         }
         System.out.println();
