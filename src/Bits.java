@@ -5,8 +5,8 @@ public class Bits {
         this.num = num;
     }
 
-    public void printBinaryRepresentation() {
-        System.out.println(num + ": " + Integer.toBinaryString(num));
+    public String binaryRepresentation() {
+        return Integer.toBinaryString(num);
     }
 
     public void setBitToOneAt(int index) {
