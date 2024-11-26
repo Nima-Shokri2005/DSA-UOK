@@ -14,7 +14,6 @@ public class DieGame {
                     stepCount = 0;
                     players[i] = false;
                 }
-
             }
 
         }
