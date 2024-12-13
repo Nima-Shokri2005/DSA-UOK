@@ -1,5 +1,6 @@
 public class SinglyLinkedList {
     public SinglyLinkedList() {
+
     }
 
     private Node first;
@@ -7,7 +8,7 @@ public class SinglyLinkedList {
     private int size = 0;
 
     private static class Node {
-        private final int value;
+        private int value;
         private Node next;
 
         public Node(int value) {
@@ -146,6 +147,41 @@ public class SinglyLinkedList {
         }
         last = first;
         first = previous;
+    }
+
+    public void multiplyElements(int multiplier) {
+        Node current = first;
+        while (current != null) {
+            current.value *= multiplier;
+            current = current.next;
+        }
+    }
+    static SinglyLinkedList mergeSortedLists(SinglyLinkedList list1, SinglyLinkedList list2) {
+        SinglyLinkedList mergedList = new SinglyLinkedList();
+        Node current1 = list1.first;
+        Node current2 = list2.first;
+
+        while (current1 != null && current2 != null) {
+            if (current1.value <= current2.value) {
+                mergedList.addLast(current1.value);
+                current1 = current1.next;
+            } else {
+                mergedList.addLast(current2.value);
+                current2 = current2.next;
+            }
+        }
+
+        while (current1 != null) {
+            mergedList.addLast(current1.value);
+            current1 = current1.next;
+        }
+
+        while (current2 != null) {
+            mergedList.addLast(current2.value);
+            current2 = current2.next;
+        }
+
+        return mergedList;
     }
 
 }
