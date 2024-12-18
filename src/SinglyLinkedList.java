@@ -149,13 +149,17 @@ public class SinglyLinkedList {
         first = previous;
     }
 
-    public void multiplyElements(int multiplier) {
+    public void multiplyElements(int multiplier, int x) {
         Node current = first;
         while (current != null) {
-            current.value *= multiplier;
+            if (current.value == x) {
+                current.value *= multiplier;
+
+            }
             current = current.next;
         }
     }
+
     static SinglyLinkedList mergeSortedLists(SinglyLinkedList list1, SinglyLinkedList list2) {
         SinglyLinkedList mergedList = new SinglyLinkedList();
         Node current1 = list1.first;
